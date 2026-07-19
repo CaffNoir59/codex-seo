@@ -1,14 +1,14 @@
 {
   "name": "codex-seo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Audit, fix, validate, and deploy SEO changes through a controlled local workflow.",
   "author": {
     "name": "Codex SEO Contributors",
     "email": "author@example.com",
     "url": "https://example.com"
   },
-  "homepage": "https://example.com/codex-seo",
-  "repository": "https://github.com/example/codex-seo",
+  "homepage": "https://github.com/CaffNoir59/codex-seo#readme",
+  "repository": "https://github.com/CaffNoir59/codex-seo",
   "license": "MIT",
   "keywords": ["seo", "audit", "git", "mcp"],
   "skills": "./skills/",
@@ -20,7 +20,7 @@
     "developerName": "Codex SEO Contributors",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],
-    "websiteURL": "https://example.com/codex-seo",
+    "websiteURL": "https://github.com/CaffNoir59/codex-seo#readme",
     "privacyPolicyURL": "https://example.com/privacy",
     "termsOfServiceURL": "https://example.com/terms",
     "defaultPrompt": [

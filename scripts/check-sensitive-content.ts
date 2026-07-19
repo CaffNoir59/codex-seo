@@ -110,7 +110,8 @@ export function scanSensitiveText(text: string, file = "input", forbiddenNames: 
     if ((url.username || url.password) && !placeholderCredentials) add(match.index ?? 0, "url-credentials", raw);
     if (file !== "package-lock.json" && /^(?:github\.com|gitlab\.com|bitbucket\.org)$/i.test(url.hostname)) {
       const segments = url.pathname.split("/").filter(Boolean);
-      const approved = url.hostname.toLowerCase() === "github.com" && segments[0]?.toLowerCase() === "example" && segments[1]?.toLowerCase().replace(/\.git$/, "") === "codex-seo";
+      const approvedOwners = new Set(["example", "caffnoir59"]);
+      const approved = url.hostname.toLowerCase() === "github.com" && approvedOwners.has(segments[0]?.toLowerCase() ?? "") && segments[1]?.toLowerCase().replace(/\.git$/, "") === "codex-seo";
       if (segments.length >= 2 && !approved) add(match.index ?? 0, "personal-forge-url", raw);
     }
   }

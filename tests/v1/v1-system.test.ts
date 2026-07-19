@@ -30,7 +30,7 @@ async function tempDir(prefix = "codex-seo-v1-") { return await mkdtemp(path.joi
 describe("v1 compiled CLI", () => {
   const cliCases: string[][] = [["--version"], ["--help"], ["audit", "--help"], ["diff", "--help"], ["history", "--help"], ["gsc", "--help"], ["doctor", "--json"], ["init", "--minimal", "--dry-run"], ["validate", "--json-output"]];
   it.each(cliCases)("runs %s", (...args: string[]) => { if (!existsSync(bin)) return; const result = runCli(args); expect([0, 1]).toContain(result.status); expect(`${result.stdout}${result.stderr}`).not.toContain("[object Object]"); });
-  it("prints version from package", () => { if (!existsSync(bin)) return; expect(runCli(["--version"]).stdout.trim()).toBe("1.1.0"); });
+  it("prints version from package", () => { if (!existsSync(bin)) return; expect(runCli(["--version"]).stdout.trim()).toBe("1.1.1"); });
   it("reports missing argument with exit 1", () => { if (!existsSync(bin)) return; expect(runCli(["audit"]).status).not.toBe(0); });
   it("ignores unrelated npm_config values", () => { if (!existsSync(bin)) return; const result = runCli(["doctor", "--json"], process.cwd(), { npm_config_mystery: "secret" }); expect(result.stdout).not.toContain("mystery"); });
   it("supports schema migrate dry-run", () => { if (!existsSync(bin)) return; const result = runCli(["migrate", "tests/fixtures/history/history-entries.json", "--dry-run", "--json-output"]); expect(result.status).toBe(0); expect(result.stdout).toContain("targetVersion"); });

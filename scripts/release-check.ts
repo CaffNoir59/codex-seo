@@ -7,7 +7,7 @@ const checks: { name: string; ok: boolean; detail?: string }[] = [];
 async function exists(file: string) { return await stat(file).then(() => true).catch(() => false); }
 function add(name: string, ok: boolean, detail?: string) { checks.push({ name, ok, detail }); }
 const pkg = readPackageJson();
-add("version", pkg.version === "1.1.0", String(pkg.version));
+add("version", pkg.version === "1.1.1", String(pkg.version));
 add("license", Boolean(pkg.license), String(pkg.license ?? "missing"));
 add("README", await exists("README.md"));
 add("CHANGELOG", await exists("CHANGELOG.md"));

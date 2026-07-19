@@ -9,7 +9,7 @@ cd my-project
 npx codex-seo init --yes
 ```
 
-Then ask Codex: ?Audit this project and fix the most important SEO issues.? See [Local ecosystem, MCP, Git, preview, deployment, and security](docs/ecosystem.md) for the complete installation and operations guide.
+Then ask Codex: "Audit this project and fix the most important SEO issues." See [Local ecosystem, MCP, Git, preview, deployment, and security](docs/ecosystem.md) for the complete installation and operations guide.
 
 Native Codex SEO CLI and Agent Skills for technical SEO audits, sitewide crawling, performance, Google Search Console, baselines, diffs, historical trends, and CI quality gates.
 
@@ -136,7 +136,7 @@ See `CONTRIBUTING.md`.
 
 MIT.
 
-## Codex project workflow (1.1.0)
+## Codex project workflow (1.1.1)
 
 Install and initialize once:
 
@@ -151,4 +151,4 @@ Configure a generic remote target without storing secrets:
 
 Strict host verification requires a SHA256 fingerprint or ignored known_hosts file. See docs/ssh-sftp.md and docs/hostinger.md. Diagnose with npx codex-seo plugin doctor and update managed project plugin files non-destructively with npx codex-seo plugin update.
 
-In Codex, ask: ?Analyze this project, correct important SEO problems, validate the changes, and prepare deployment.?
+In Codex, ask: "Analyze this project, correct important SEO problems, validate the changes, and prepare deployment."

@@ -2,6 +2,13 @@
 
 All notable changes to Codex SEO are documented here.
 
+## [1.1.1] - 2026-07-20
+
+### Fixed
+- Corrected npm repository, homepage, and issue tracker metadata.
+- Fixed minor README character encoding issues.
+- Removed remaining public repository metadata placeholders.
+
 ## [1.1.0] - 2026-07-19
 
 ### Added

@@ -1,6 +1,6 @@
 # Codex SEO local ecosystem
 
-Codex SEO 1.1.0 includes a local-first CLI, project initializer, stdio MCP server, Git safety workflow, managed preview, deployment adapter boundary, and Codex plugin. The original audit, crawl, performance, GSC, diff, history, and reporting commands remain available.
+Codex SEO 1.1.1 includes a local-first CLI, project initializer, stdio MCP server, Git safety workflow, managed preview, deployment adapter boundary, and Codex plugin. The original audit, crawl, performance, GSC, diff, history, and reporting commands remain available.
 
 ## Quick start
 
@@ -27,7 +27,7 @@ npx codex-seo init --yes
 From a generic Git clone:
 
 ```bash
-git clone https://github.com/example/codex-seo.git
+git clone https://github.com/CaffNoir59/codex-seo.git
 cd codex-seo
 npm install
 npm run build
