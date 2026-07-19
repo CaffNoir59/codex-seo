@@ -1,0 +1,16 @@
+{
+    "schemaVersion":  "1.1.0",
+    "crawl":  {
+                  "enabled":  true,
+                  "maxPages":  200
+              },
+    "history":  {
+                    "enabled":  true,
+                    "environment":  "production"
+                },
+    "diff":  {
+                 "failOnRegression":  true,
+                 "maxScoreDrop":  3,
+                 "maxNewCritical":  0
+             }
+}

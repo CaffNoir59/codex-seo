@@ -1,0 +1,102 @@
+{
+  "name": "codex-seo",
+  "version": "1.1.0",
+  "description": "Native Codex SEO CLI for technical audits, performance, Search Console, baselines, historical trends, and CI quality gates.",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "codex-seo": "dist/cli/index.js",
+    "codex-seo-mcp": "dist/cli/mcp.js",
+    "create-codex-seo": "dist/cli/create.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "audit": "node dist/cli/index.js audit",
+    "test": "vitest run tests",
+    "validate": "npm run typecheck && npm run lint && npm run build && npm test && tsx scripts/validate-skills.ts && tsx scripts/validate-report-schema.ts && npm run check:sensitive && npm run check:licenses",
+    "lint": "tsx scripts/lint.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "diff": "node dist/cli/index.js diff",
+    "test:performance-integration": "vitest run tests/performance/official-lighthouse-integration.test.ts",
+    "gsc": "node dist/cli/index.js gsc",
+    "test:gsc-integration": "tsx scripts/run-gsc-integration.ts",
+    "history": "node dist/cli/index.js history",
+    "doctor": "node dist/cli/index.js doctor",
+    "init": "node dist/cli/index.js init",
+    "release:check": "tsx scripts/release-check.ts",
+    "publish:check": "tsx scripts/publish-check.ts",
+    "test:coverage": "tsx scripts/coverage-summary.ts",
+    "check:sensitive": "npm run build --silent && node dist/scripts/check-sensitive-content.js",
+    "check:licenses": "tsx scripts/check-licenses.ts",
+    "mcp": "node dist/cli/mcp.js",
+    "prepack": "npm run build && npm run check:sensitive && npm run check:licenses"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "commander": "^12.1.0",
+    "lighthouse": "^12.6.1",
+    "playwright": "^1.49.0",
+    "ssh2": "^1.17.0",
+    "undici": "^7.2.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/ssh2": "^1.15.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.10"
+  },
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "codex",
+    "cli",
+    "lighthouse",
+    "search-console",
+    "core-web-vitals",
+    "technical-seo",
+    "ci",
+    "quality-gates"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/codex-seo.git"
+  },
+  "homepage": "https://github.com/example/codex-seo#readme",
+  "bugs": {
+    "url": "https://github.com/example/codex-seo/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./cli": "./dist/cli/index.js"
+  },
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src",
+    "dist/cli",
+    "plugin",
+    "skills",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md",
+    "package.json"
+  ]
+}
+

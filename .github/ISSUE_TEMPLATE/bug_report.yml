@@ -1,0 +1,20 @@
+name: Bug report
+description: Report a reproducible Codex SEO defect
+title: "[Bug] "
+body:
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: Use a neutral minimal project and redact all credentials and private URLs.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Codex SEO version
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

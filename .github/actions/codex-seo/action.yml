@@ -1,0 +1,65 @@
+name: Codex SEO
+summary: Run Codex SEO audit and historical gates
+inputs:
+  url:
+    required: true
+    description: URL to audit
+  crawl:
+    default: "true"
+    description: Enable sitewide crawl
+  performance:
+    default: "false"
+    description: Enable performance checks
+  gsc:
+    default: "false"
+    description: Enable Google Search Console
+  environment:
+    default: production
+    description: History environment
+  history:
+    default: "true"
+    description: Save history
+  fail-on-regression:
+    default: "true"
+    description: Fail historical gates on regressions
+  config:
+    default: codex-seo.config.json
+    description: Config file
+outputs:
+  seo-score:
+    value: ${{ steps.outputs.outputs.seo-score }}
+  lighthouse-score:
+    value: ${{ steps.outputs.outputs.lighthouse-score }}
+  gsc-clicks:
+    value: ${{ steps.outputs.outputs.gsc-clicks }}
+  gate-status:
+    value: ${{ steps.outputs.outputs.gate-status }}
+  report-path:
+    value: ${{ steps.outputs.outputs.report-path }}
+runs:
+  using: composite
+  steps:
+    - run: npm ci
+      shell: bash
+    - run: npm run build
+      shell: bash
+    - run: node dist/cli/index.js doctor --config "${{ inputs.config }}"
+      shell: bash
+    - run: >-
+        node dist/cli/index.js audit "${{ inputs.url }}"
+        ${{ inputs.crawl == 'true' && '--crawl' || '' }}
+        ${{ inputs.performance == 'true' && '--performance' || '' }}
+        ${{ inputs.gsc == 'true' && '--gsc' || '' }}
+        ${{ inputs.history == 'true' && '--save-history' || '' }}
+        --environment "${{ inputs.environment }}"
+      shell: bash
+    - run: node dist/cli/index.js history export-ci --format github
+      shell: bash
+    - id: outputs
+      run: |
+        echo "seo-score=" >> "$GITHUB_OUTPUT"
+        echo "lighthouse-score=" >> "$GITHUB_OUTPUT"
+        echo "gsc-clicks=" >> "$GITHUB_OUTPUT"
+        echo "gate-status=completed" >> "$GITHUB_OUTPUT"
+        echo "report-path=reports" >> "$GITHUB_OUTPUT"
+      shell: bash

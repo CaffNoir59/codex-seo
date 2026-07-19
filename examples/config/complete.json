@@ -1,0 +1,27 @@
+{
+    "schemaVersion":  "1.1.0",
+    "target":  {
+                   "url":  "https://example.com",
+                   "environment":  "production"
+               },
+    "crawl":  {
+                  "enabled":  true,
+                  "maxPages":  500,
+                  "maxDepth":  5,
+                  "render":  "auto"
+              },
+    "performance":  {
+                        "enabled":  true,
+                        "mode":  "local",
+                        "runs":  3
+                    },
+    "history":  {
+                    "enabled":  true,
+                    "dir":  ".codex-seo/history"
+                },
+    "diff":  {
+                 "failOnRegression":  true,
+                 "maxScoreDrop":  3,
+                 "maxNewCritical":  0
+             }
+}

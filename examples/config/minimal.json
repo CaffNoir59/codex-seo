@@ -1,0 +1,12 @@
+{
+    "schemaVersion":  "1.1.0",
+    "target":  {
+                   "environment":  "production"
+               },
+    "crawl":  {
+                  "enabled":  false
+              },
+    "history":  {
+                    "enabled":  true
+                }
+}

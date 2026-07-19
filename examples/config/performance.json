@@ -1,0 +1,10 @@
+{
+    "schemaVersion":  "1.1.0",
+    "performance":  {
+                        "enabled":  true,
+                        "mode":  "all",
+                        "device":  "mobile",
+                        "runs":  3,
+                        "pagespeedApiKeyEnv":  "PAGESPEED_API_KEY"
+                    }
+}

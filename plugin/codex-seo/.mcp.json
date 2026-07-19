@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "codex_seo": {
+      "command": "npx",
+      "args": ["-y", "--package", "codex-seo", "codex-seo-mcp"]
+    }
+  }
+}

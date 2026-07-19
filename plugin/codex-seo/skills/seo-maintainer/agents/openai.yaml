@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Maintainer"
+  short_description: "Audit, release, deploy, and roll back SEO safely"
+  default_prompt: "Use $seo-maintainer to analyze this project, fix important SEO issues, validate the changes, and prepare a safe release."

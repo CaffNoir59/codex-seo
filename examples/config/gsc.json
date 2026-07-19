@@ -1,0 +1,10 @@
+{
+    "schemaVersion":  "1.1.0",
+    "gsc":  {
+                "enabled":  true,
+                "property":  "sc-domain:example.com",
+                "credentialsEnv":  "GOOGLE_APPLICATION_CREDENTIALS",
+                "days":  28,
+                "privacyMode":  true
+            }
+}
