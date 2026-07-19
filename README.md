@@ -1,5 +1,11 @@
 # Codex SEO
 
+[![npm version](https://img.shields.io/npm/v/codex-seo.svg)](https://www.npmjs.com/package/codex-seo)
+[![npm downloads](https://img.shields.io/npm/dm/codex-seo.svg)](https://www.npmjs.com/package/codex-seo)
+[![license](https://img.shields.io/npm/l/codex-seo.svg)](LICENSE)
+[![CI](https://github.com/CaffNoir59/codex-seo/actions/workflows/codex-seo.yml/badge.svg)](https://github.com/CaffNoir59/codex-seo/actions/workflows/codex-seo.yml)
+[![Node.js](https://img.shields.io/node/v/codex-seo.svg)](package.json)
+
 Codex SEO also ships a local project ecosystem: an idempotent initializer, stdio MCP server, local Git safety workflow, managed previews, controlled deployment adapters, and the generic `seo-maintainer` Codex plugin skill.
 
 ## Ecosystem Quick Start

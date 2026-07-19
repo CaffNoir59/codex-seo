@@ -23,6 +23,7 @@ const allowedServiceHosts = new Set([
   "chromeuxreport.googleapis.com",
   "developer.chrome.com",
   "github.com",
+  "img.shields.io",
   "iana.org",
   "oauth2.googleapis.com",
   "opencollective.com",
@@ -32,6 +33,7 @@ const allowedServiceHosts = new Set([
   "tidelift.com",
   "web.dev",
   "www.googleapis.com",
+  "www.npmjs.com",
   "www.sitemaps.org"
 ]);
 
