@@ -2,6 +2,12 @@
 
 All notable changes to Codex SEO are documented here.
 
+## [1.1.2] - 2026-07-20
+
+### Security
+- Pinned Lighthouse to 12.6.1 to prevent fresh installations from resolving a dependency chain containing a vulnerable OpenTelemetry version.
+- Preserved Node.js 20 compatibility and existing Lighthouse audit behavior.
+
 ## [1.1.1] - 2026-07-20
 
 ### Fixed

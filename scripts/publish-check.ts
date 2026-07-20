@@ -61,9 +61,9 @@ try {
   if (!messages.some((message) => Array.isArray(message.result?.tools))) throw new Error("Installed MCP did not return a tool list");
   passed("plugin doctor", await run(process.execPath, [cli, "plugin", "doctor", "--json"], workspace));
   const installedManifest = JSON.parse(await readFile(path.join(workspace, "node_modules", "codex-seo", "plugin", "codex-seo", ".codex-plugin", "plugin.json"), "utf8")) as { version: string };
-  if (installedManifest.version !== "1.1.1") throw new Error("Installed plugin version is not synchronized");
+  if (installedManifest.version !== "1.1.2") throw new Error("Installed plugin version is not synchronized");
   console.log(JSON.stringify({ ready: true, version: installedManifest.version, files: dryFiles.length, toolsListed: true, temporaryInstall: true }, null, 2));
 } finally {
-  if (tarball && path.dirname(tarball) === repository && /^codex-seo-1\.1\.1\.tgz$/.test(path.basename(tarball))) await rm(tarball, { force: true });
+  if (tarball && path.dirname(tarball) === repository && /^codex-seo-1\.1\.2\.tgz$/.test(path.basename(tarball))) await rm(tarball, { force: true });
   await rm(workspace, { recursive: true, force: true });
 }
